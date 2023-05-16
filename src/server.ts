@@ -6,9 +6,7 @@ import cors from 'cors';
 const app = express();
 app.use(cors());
 
-mongoose.connect(
-  'mongodb+srv://caiquecreimberg:tzVv7tkdb7I1e0or@enginecontrol.5ni6ozq.mongodb.net/?retryWrites=true&w=majority',
-);
+mongoose.connect(process.env.MONGO_AUTH);
 
 app.use(express.json());
 app.use(routes);
